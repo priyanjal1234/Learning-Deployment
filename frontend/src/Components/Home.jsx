@@ -9,7 +9,6 @@ function Home() {
   useEffect(() => {
     async function fetchLoggedinUser() {
       let fetchLoggedinUserRes = await getLoggedinUser();
-         console.log(fetchLoggedinUserRes)
         setuser(fetchLoggedinUserRes.data);
     
     }
