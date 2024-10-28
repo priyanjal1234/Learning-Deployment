@@ -19,7 +19,10 @@ module.exports.registerController = async function (req, res) {
       password: hash,
     });
     let token = jwt.sign({ username, email }, process.env.JWT_KEY);
-    res.cookie("token", token);
+    res.cookie("token", token, {
+      httpOnly: true,
+      sameSite: "None"
+    });
     res.status(201).json({ message: "Registration Successfull",token });
   } catch (error) {
     res.status(500).json({ errorMessage: error.message });
