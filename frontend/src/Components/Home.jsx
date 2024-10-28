@@ -9,9 +9,9 @@ function Home() {
   useEffect(() => {
     async function fetchLoggedinUser() {
       let fetchLoggedinUserRes = await getLoggedinUser();
-      if (fetchLoggedinUserRes && fetchLoggedinUserRes.status === 200) {
+     
         setuser(fetchLoggedinUserRes.data);
-      }
+    
     }
     fetchLoggedinUser();
   }, []);
